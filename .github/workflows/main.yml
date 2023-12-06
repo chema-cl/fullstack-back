@@ -12,5 +12,10 @@ jobs:
       - uses: actions/checkout@v2
       - name: Install dependencies
         run:
-            pyton -m pip install --upgrade pip
+            python -m pip install --upgrade pip
             pip install pylint pytest flask
+      - name: Pylint
+        run: pylint `ls -R|grep .py$|xargs`
+      - name: Pytest
+        run: pytest `ls -R|grep test_*.py$|xargs`
+                
