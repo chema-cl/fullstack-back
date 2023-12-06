@@ -1,0 +1,16 @@
+name: Pipeline Backend
+on:
+  push:
+    branches: [ main ]
+  pull_request: 
+    branches: [ main ]
+  workflow_dispatch: 
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install dependencies
+        run:
+            pyton -m pip install --upgrade pip
+            pip install pylint pytest flask
