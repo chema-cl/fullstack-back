@@ -1,3 +1,16 @@
+"""Módulo para realizar actividades relacionadas con la persistencia de datos.
+
+Este módulo contiene funciones para realizar actividades de persistencia,
+como guardar, leer y limpiar pedidos utilizando Flask y una conexión persistente
+a una base de datos o archivos.
+
+Las funciones y métodos aquí definidos interactúan con el módulo 'persistencia'
+y utilizan las bibliotecas Flask para manejar solicitudes web y redirecciones.
+
+Autor: José Manuel Carrasco López
+Fecha de creación: 06/12/2023
+"""
+
 def guardar_pedido(nombre, apellidos):
     """Guarda un pedido en un archivo de texto.
 

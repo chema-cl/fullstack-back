@@ -1,8 +1,18 @@
+"""Módulo para realizar actividades relacionadas con la persistencia de datos.
+
+Este módulo contiene funciones para realizar actividades de persistencia,
+como guardar, leer y limpiar pedidos utilizando Flask y una conexión persistente
+a una base de datos o archivos.
+
+Autor: José Manuel Carrasco López
+Fecha de creación: 06/12/2023
+"""
 import persistencia
 from flask import Flask, request, redirect
 
-#URL Base, usaremos una constante por si en algún momento se publica en un sitio diferente a localhost
-frontEndURLBase = "http://localhost/modulo1/actividad1"
+# URL Base, usaremos una constante por si en algún momento
+# se publica en un sitio diferente a localhost
+FRONT_END_URL_BASE  = "http://localhost/modulo1/actividad1"
 app = Flask('Actividad-01')
 
 @app.route('/pizza', methods=['POST'])
@@ -28,7 +38,7 @@ def procesar_pedido():
     persistencia.guardar_pedido(nombre,apellidos)
 
     # Redireccionar a la página 'solicita_pedido.html'
-    return redirect(frontEndURLBase + "/solicita_pedido.html", code=302)
+    return redirect(FRONT_END_URL_BASE + "/solicita_pedido.html", code=302)
 
 # Control para que solo se levante el servidor de escucha si usamos este fichero
 # como principal y no si lo estamos imporatando desde otro
