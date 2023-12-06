@@ -7,8 +7,8 @@ a una base de datos o archivos.
 Autor: José Manuel Carrasco López
 Fecha de creación: 06/12/2023
 """
-import persistencia
 from flask import Flask, request, redirect
+import persistencia
 
 # URL Base, usaremos una constante por si en algún momento
 # se publica en un sitio diferente a localhost
