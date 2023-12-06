@@ -69,13 +69,13 @@ def leer_linea(fichero, numero_linea):
         str: La línea específica del archivo si se encuentra dentro del rango.
              Mensaje de advertencia si el número de línea está fuera del rango 
              del archivo o si ocurre un error.
-    """  
+    """
     try:
         with open(fichero, 'r', encoding='utf-8') as archivo:
             for num, linea in enumerate(archivo, start=1):
                 if num == numero_linea:
                     return linea.rstrip('\n')  # Eliminar el salto de línea al final
-            return f"El número de línea {numero_linea} está fuera del rango"        
+            return f"El número de línea {numero_linea} está fuera del rango"
     except FileNotFoundError:
         return f"El archivo '{fichero}' no se encontró."
     except OSError as e:
