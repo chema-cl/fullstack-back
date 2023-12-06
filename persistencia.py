@@ -20,7 +20,7 @@ def guardar_pedido(nombre, apellidos, fichero):
     Args:
         nombre (str): El nombre del cliente.
         apellidos (str): Los apellidos del cliente.
-        file (str): nombre del fichero donde se guardará la prueba
+        fichero (str): nombre del fichero donde se guardará la prueba
 
     Returns:
         None
@@ -47,7 +47,7 @@ def limpiar_pedidos(fichero):
     """Limpia el contenido del archivo 'pedidos.txt'.
 
     Args:
-        file (str): nombre del fichero al que se le borrará el contenido
+        fichero (str): nombre del fichero al que se le borrará el contenido
 
     Returns:
         None
@@ -57,12 +57,12 @@ def limpiar_pedidos(fichero):
         miFichero.close()
 
 
-def leer_linea(nombre_archivo, numero_linea):
+def leer_linea(fichero, numero_linea):
     """
     Devuelve la línea específica de un archivo dado su nombre y el número de línea.
 
     Args:
-        nombre_archivo (str): El nombre del archivo del cual se desea obtener la línea.
+        fichero (str): El nombre del archivo del cual se desea obtener la línea.
         numero_linea (int): El número de línea que se quiere recuperar.
 
     Returns:
@@ -71,13 +71,12 @@ def leer_linea(nombre_archivo, numero_linea):
              del archivo o si ocurre un error.
     """  
     try:
-        with open(nombre_archivo, 'r', encoding='utf-8') as archivo:
-            lineas = archivo.readlines()
-            if 1 <= numero_linea <= len(lineas):
-                return lineas[numero_linea - 1]
-            else:
-                return f"El número de línea {numero_linea} está fuera del rango del archivo."
+        with open(fichero, 'r', encoding='utf-8') as archivo:
+            for num, linea in enumerate(archivo, start=1):
+                if num == numero_linea:
+                    return linea.rstrip('\n')  # Eliminar el salto de línea al final
+            return f"El número de línea {numero_linea} está fuera del rango"        
     except FileNotFoundError:
-        return f"El archivo '{nombre_archivo}' no se encontró."
-    except Exception as e:
-        return f"Ocurrió un error: {str(e)}"
+        return f"El archivo '{fichero}' no se encontró."
+    except OSError as e:
+        return f"Error al abrir o leer el archivo: {str(e)}"

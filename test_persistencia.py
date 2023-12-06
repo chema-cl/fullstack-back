@@ -22,5 +22,5 @@ def test_guardar_pedido():
     primeraLinea = persistencia.leer_linea(FICHERO_PERSISTENCIA,1)
     segundaLinea = persistencia.leer_linea(FICHERO_PERSISTENCIA,2)
 
-    assert primeraLinea == "Juan Gómez\n"    
-    assert primeraLinea == "José López\n"
+    assert primeraLinea == "Juan Gómez"    
+    assert primeraLinea == "José López"
