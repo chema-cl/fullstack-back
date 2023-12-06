@@ -13,6 +13,7 @@ import persistencia
 # URL Base, usaremos una constante por si en algún momento
 # se publica en un sitio diferente a localhost
 FRONT_END_URL_BASE  = "http://localhost/modulo1/actividad1"
+FICHERO_PERSISTENCIA = "pedidos.txt"
 app = Flask('Actividad-01')
 
 @app.route('/pizza', methods=['POST'])
@@ -35,7 +36,7 @@ def procesar_pedido():
     print("Apellidos:", apellidos)
 
     # Guardamos el pedido
-    persistencia.guardar_pedido(nombre,apellidos)
+    persistencia.guardar_pedido(nombre,apellidos,'pedidos.txt')
 
     # Redireccionar a la página 'solicita_pedido.html'
     return redirect(FRONT_END_URL_BASE + "/solicita_pedido.html", code=302)
