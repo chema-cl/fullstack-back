@@ -19,8 +19,8 @@ def test_guardar_pedido():
     persistencia.guardar_pedido("Juan","Gómez",FICHERO_PERSISTENCIA)
     persistencia.guardar_pedido("José","López",FICHERO_PERSISTENCIA)
 
-    primeraLinea = persistencia.leer_linea(FICHERO_PERSISTENCIA,1)
-    segundaLinea = persistencia.leer_linea(FICHERO_PERSISTENCIA,2)
+    primera_linea = persistencia.leer_linea(FICHERO_PERSISTENCIA,1)
+    segunda_linea = persistencia.leer_linea(FICHERO_PERSISTENCIA,2)
 
-    assert primeraLinea == "Juan Gómez"    
-    assert primeraLinea == "José López"
+    assert primera_linea == "Juan Gómez"    
+    assert segunda_linea == "José López"

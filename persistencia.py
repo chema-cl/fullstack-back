@@ -25,9 +25,9 @@ def guardar_pedido(nombre, apellidos, fichero):
     Returns:
         None
     """
-    with open(fichero, 'a', encoding='utf-8') as miFichero:
-        miFichero.write(nombre + " " + apellidos + "\n")
-        miFichero.close()
+    with open(fichero, 'a', encoding='utf-8') as mi_fichero:
+        mi_fichero.write(nombre + " " + apellidos + "\n")
+        mi_fichero.close()
 
 def leer_pedidos(fichero):
     """Lee y muestra todos los pedidos guardados en el archivo 'pedidos.txt'.
@@ -38,10 +38,10 @@ def leer_pedidos(fichero):
     Returns:
         None
     """
-    with open(fichero, 'r', encoding='utf-8') as miFichero:
-        for pedido in miFichero:
+    with open(fichero, 'r', encoding='utf-8') as mi_fichero:
+        for pedido in mi_fichero:
             print(pedido.strip())
-        miFichero.close()
+        mi_fichero.close()
 
 def limpiar_pedidos(fichero):
     """Limpia el contenido del archivo 'pedidos.txt'.
@@ -52,9 +52,9 @@ def limpiar_pedidos(fichero):
     Returns:
         None
     """
-    with open(fichero, 'w', encoding='utf-8') as miFichero:
-        miFichero.write("")
-        miFichero.close()
+    with open(fichero, 'w', encoding='utf-8') as mi_fichero:
+        mi_fichero.write("")
+        mi_fichero.close()
 
 
 def leer_linea(fichero, numero_linea):
