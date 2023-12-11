@@ -3,11 +3,10 @@
 Autor: José Manuel Carrasco López
 Fecha de creación: 09/12/2023
 """
-import pytest
 import api
 
 # Definimos la lista base de nombres sobre la que vamos a trabajar
-CONSTANTE_LISTA =  ["master", "full", "stack"]
+CONSTANTE_LISTA = ["master", "full", "stack"]
 
 def test_obtener_primer_elemento():
     """
