@@ -49,7 +49,7 @@ def checksize():
     # mensaje por defecto, disponible
     respuesta = "true"
     size = request.form.get('size')
-    print(size);
+    print(size)
     if size == "S":
         respuesta = "false"
 
