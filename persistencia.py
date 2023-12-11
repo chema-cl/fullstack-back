@@ -10,7 +10,6 @@ y utilizan las bibliotecas Flask para manejar solicitudes web y redirecciones.
 Autor: José Manuel Carrasco López
 Fecha de creación: 06/12/2023
 """
-
 def guardar_pedido(nombre, apellidos, fichero):
     """Guarda un pedido en un archivo de texto.
 

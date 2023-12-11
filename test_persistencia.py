@@ -4,6 +4,7 @@ Test del módulo de persistencia
 Autor: José Manuel Carrasco López
 Fecha de creación: 06/12/2023
 """
+import pytest
 import persistencia
 
 FICHERO_PERSISTENCIA = "test_pedidos.txt"

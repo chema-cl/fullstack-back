@@ -36,7 +36,7 @@ def procesar_pedido():
     print("Apellidos:", apellidos)
 
     # Guardamos el pedido
-    persistencia.guardar_pedido(nombre,apellidos,'pedidos.txt')
+    persistencia.guardar_pedido(nombre,apellidos,FICHERO_PERSISTENCIA)
 
     # Redireccionar a la página 'solicita_pedido.html'
     return redirect(FRONT_END_URL_BASE + "/solicita_pedido.html", code=302)
