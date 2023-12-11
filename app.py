@@ -7,12 +7,12 @@ a una base de datos o archivos.
 Autor: José Manuel Carrasco López
 Fecha de creación: 06/12/2023
 """
-from flask import Flask, request, redirect
+from flask import Flask, request, redirect, Response
 import persistencia
 
 # URL Base, usaremos una constante por si en algún momento
 # se publica en un sitio diferente a localhost
-FRONT_END_URL_BASE  = "http://localhost/modulo1/actividad1"
+FRONT_END_URL_BASE  = "http://localhost/web/"
 FICHERO_PERSISTENCIA = "pedidos.txt"
 app = Flask('Actividad-01')
 
@@ -40,6 +40,23 @@ def procesar_pedido():
 
     # Redireccionar a la página 'solicita_pedido.html'
     return redirect(FRONT_END_URL_BASE + "/solicita_pedido.html", code=302)
+
+@app.route("/checksize",methods=['POST'])
+def checksize():
+    """
+    Comprueba disponibilidad de un tamaño de pizza.
+    """
+    # mensaje por defecto, disponible
+    respuesta = "true"
+    size = request.form.get('size')
+    print(size);
+    if size == "S":
+        respuesta = "false"
+
+    print(respuesta)
+    # Devuelve el resultado de la consulta
+    return Response(respuesta, 200, {'Access-Control-Allow-Origin': '*'})
+
 
 # Control para que solo se levante el servidor de escucha si usamos este fichero
 # como principal y no si lo estamos imporatando desde otro
