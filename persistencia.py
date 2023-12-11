@@ -25,7 +25,7 @@ def guardar_pedido(nombre, apellidos, fichero):
         None
     """
     with open(fichero, 'a', encoding='utf-8') as mi_fichero:
-        mi_fichero.write(nombre + " " + apellidos + "\n")
+        mi_fichero.write("-" + nombre + " " + apellidos + "\n")
         mi_fichero.close()
 
 def leer_pedidos(fichero):
