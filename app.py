@@ -12,7 +12,7 @@ import persistencia
 
 # URL Base, usaremos una constante por si en algún momento
 # se publica en un sitio diferente a localhost
-FRONT_END_URL_BASE  = "http://localhost/web/"
+FRONT_END_URL_BASE  = "http://localhost"
 FICHERO_PERSISTENCIA = "pedidos.txt"
 app = Flask('Actividad-01')
 
@@ -47,11 +47,11 @@ def checksize():
     Comprueba disponibilidad de un tamaño de pizza.
     """
     # mensaje por defecto, disponible
-    respuesta = "true"
+    respuesta = "Disponible"
     size = request.form.get('size')
     print(size)
     if size == "S":
-        respuesta = "false"
+        respuesta = "No Disponible"
 
     print(respuesta)
     # Devuelve el resultado de la consulta
